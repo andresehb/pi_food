@@ -1,0 +1,57 @@
+.create_recipe_wrapper {
+    background-color: rgba(100, 100, 100, .5);
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.recipe_creator {
+    border: 2px solid #000;
+    width: 500px;
+    background-color: rgba(255, 255, 255, .7);
+    font-family: "Poppins", sans-serif;
+}
+
+.recipe_creator h1 {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.recipe_creator .form_info {
+    margin-bottom: 1.725em;
+}
+
+.recipe_creator .form_info .info_label {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 6px;
+    letter-spacing: 2px;
+}
+
+.form_err_msg {
+    color: #f00;
+}
+
+.form_warning_msg {
+    color: #555;
+}
+
+.quote_container .quote_body {
+    font-weight: 700;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 2.75px;
+}
+
+.quote_container .quote_author {
+    font-weight: 400;
+    font-size: 1.375rem;
+    color: #000;
+    letter-spacing: 2.525px;
+    text-transform: uppercase;
+}

@@ -1,0 +1,13 @@
+.paging-item {
+    display: inline-block;
+    margin: 0px 3px;
+    background-color: #000;
+    border-radius: .3em;
+    padding: 3px 4px;
+}
+
+.paging-item a {
+    list-style-type: none;
+    color: #fff;
+    font-size: 1em;
+}

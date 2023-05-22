@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { addRecipeFunc, getRecipesByDietFunc } from "../../redux/actions/index";
 import { useDispatch, useSelector } from "react-redux";
+import "./CreateRecipe.css";
 function validateForm (input) {
     const reg = new RegExp('^[0-9]+$');
     let errors = {}
@@ -67,13 +68,13 @@ const CreateRecipe = () => {
     }
 
     return (
-        <div>
-            <div>
+        <div className="create_recipe_wrapper">
+            <div className="recipe_creator">
                 <Link to='/home'><button>Back</button></Link>
-                <h1>Create A New Recipe</h1>
+                <h1>create a new recipe</h1>
                 <form onSubmit={(e) => {handleSubmit(e)}}>
-                <div>
-                    <label>Name</label>
+                <div className="form_info">
+                    <label className="info_label">Name</label>
                     <input
                         type='text'
                         name='title'
@@ -81,11 +82,11 @@ const CreateRecipe = () => {
                         onChange={(e) => {handleChange(e)}}
                     />
                     {errors.title && (
-                        <p>{errors.title}</p>
+                        <p className="form_err_msg">{errors.title}</p>
                     )}
                 </div>
-                <div>
-                    <label>Summary</label>
+                <div className="form_info">
+                    <label className="info_label">Summary</label>
                     <input
                         type='text'
                         name='summary'
@@ -93,11 +94,11 @@ const CreateRecipe = () => {
                         onChange={(e) => {handleChange(e)}} 
                     />
                     {errors.summary && (
-                        <p>{errors.summary}</p>
+                        <p className="form_err_msg">{errors.summary}</p>
                     )}
                 </div>
-                <div>
-                    <label>Rating</label>
+                <div className="form_info">
+                    <label className="info_label">Rating</label>
                     <input
                         type='text'
                         name='spoonacularScore'
@@ -105,11 +106,11 @@ const CreateRecipe = () => {
                         onChange={(e) => {handleChange(e)}} 
                     />
                     {errors.spoonacularScore && (
-                        <p>{errors.spoonacularScore}</p>
+                        <p className="form_err_msg">{errors.spoonacularScore}</p>
                     )}
                 </div>
-                <div>
-                    <label>Health Score</label>
+                <div className="form_info">
+                    <label className="info_label">Health Score</label>
                     <input
                         type='text'
                         name='healthScore'
@@ -117,11 +118,11 @@ const CreateRecipe = () => {
                         onChange={(e) => {handleChange(e)}} 
                     />
                     {errors.healthScore && (
-                        <p>{errors.healthScore}</p>
+                        <p className="form_err_msg">{errors.healthScore}</p>
                     )}
                 </div>
-                <div>
-                    <label>Step-by-step</label>
+                <div className="form_info">
+                    <label className="info_label">Step-by-step</label>
                     <input
                         type='text'
                         name='analyzedInstructions'
@@ -134,7 +135,7 @@ const CreateRecipe = () => {
                         return <option value={t}> {t} </option>
                     })}
                 </select >
-                {errors.hasOwnProperty('title') || errors.hasOwnProperty('summary') || errors.hasOwnProperty('spoonacularScore') || errors.hasOwnProperty('healthScore') ?  <p>Add all information</p> : <button type='submit'>Create New Recipe</button>}
+                {errors.hasOwnProperty('title') || errors.hasOwnProperty('summary') || errors.hasOwnProperty('spoonacularScore') || errors.hasOwnProperty('healthScore') ?  <p className="form_warning_msg">Enter all information to continue</p> : <button type='submit'>Create New Recipe</button>}
                 </form>
             
                 {input.dietTypes.map(e => {
@@ -144,6 +145,17 @@ const CreateRecipe = () => {
                         <button onClick={() => handleDelete(e)}>X</button>
                     </div>
                 )})}
+            </div>
+            <div className="quote_container">
+                <div className="quote_body">
+                    <p>"Chefs don't</p>
+                    <p>make mistakes;</p>
+                    <p>they make</p>
+                    <p>new dishes."</p>
+                </div>
+                <p className="quote_author">
+                    - Elizabeth Briggs
+                </p>
             </div>
         </div>
     )

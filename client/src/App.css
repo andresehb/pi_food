@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  margin: 0px;
+  padding: 0px;
+  background-image: url(https://www.wrenkitchens.com/blog/wp-content/uploads/2020/02/Seaweed-salad-with-sesame-seeds-in-a-plate-with-chopsticks.-scaled.jpg);
+  background-size: cover;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
 }
 
 .App-logo {

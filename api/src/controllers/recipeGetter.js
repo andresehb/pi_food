@@ -57,9 +57,10 @@ const getAllRecipes = async () => {
 const recipeQuery = async (req, res) => {
     const { name } = req.query;
     const recipesTotal = await getAllRecipes();
+    console.log(recipesTotal)
     
     if (name) {
-        let recipeName = await recipesTotal.filter((e) => e.name.toLowerCase().includes(name.toLowerCase()));
+        let recipeName = await recipesTotal.filter((e) => e.title.toLowerCase().includes(name.toLowerCase()));
         recipeName.length ?
         res.status(200).json(recipeName) :
         res.status(404).send('Recipe not found');

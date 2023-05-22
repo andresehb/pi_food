@@ -1,4 +1,5 @@
 import React from "react";
+import "./Paging.css";
 
 const Paging = ({ recipesPerPage, allRecipes, pagingFunc }) => {
     const pageNumber = []
@@ -12,7 +13,7 @@ const Paging = ({ recipesPerPage, allRecipes, pagingFunc }) => {
                 <ul>
                     {
                         pageNumber && pageNumber.map(n => (
-                            <li key={n}>
+                            <li className="paging-item" key={n}>
                                 <a onClick={() => pagingFunc(n)}>{n}</a>
                             </li>
                         ))

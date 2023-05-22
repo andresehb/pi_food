@@ -5,9 +5,10 @@ import "./LandingPage.css";
 const LandingPage = () => {
     return (
         <div className="main">
-            <h1>Welcome to my kitchen</h1>
+            <h1>Cooking Together.</h1>
+            <h3>From My Cutting Board, To Your Dinner Table. Let's Start Cooking Together.</h3>
             <Link to="/home">
-                <button>Let's go</button>
+                <button className="cta-btn">let's go</button>
             </Link>
         </div>
     )

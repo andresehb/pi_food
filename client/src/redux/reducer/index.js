@@ -45,22 +45,22 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 ...state,
                 recipes: order
             }
-        case 'ORDER_BY_PTS' : 
-            let orderPts = payload === 'lowhigh' ? 
-            state.recipes.sort(function(a,b) {
-                if(a.spoonacularScore > b.spoonacularScore) {
+        case 'ORDER_BY_PTS':
+            let orderPts = payload === 'lowhigh' ?
+            state.recipes.sort(function(a, b) {
+                if (a.spoonacularScore > b.spoonacularScore) {
                     return 1
                 }
-                if(b.spoonacularScore > a.spoonacularScore) {
+                if (b.spoonacularScore > a.spoonacularScore) {
                     return -1
                 }
                 return 0
             }) : 
-            state.recipes.sort(function(a,b) {
-                if(a.spoonacularScore > b.spoonacularScore) {
+            state.recipes.sort(function(a, b) {
+                if (a.spoonacularScore > b.spoonacularScore) {
                     return -1
                 }
-                if(b.spoonacularScore > a.spoonacularScore) {
+                if (b.spoonacularScore > a.spoonacularScore) {
                     return 1
                 }
                 return 0
@@ -77,7 +77,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
         case 'GET_BY_ID':
             return {
                 ...state,
-                details: payload
+                detail: payload
             }
         case 'ADD_RECIPE':
             return {
