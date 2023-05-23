@@ -1,0 +1,11 @@
+.recipe_container {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+}
+
+.recipe_container .btn_back {
+    border: none;
+    font-weight: 400;
+    letter-spacing: 2.525px;
+    padding: .5em .8em;
+}
