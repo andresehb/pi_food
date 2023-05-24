@@ -70,7 +70,7 @@ const CreateRecipe = () => {
     return (
         <div className="create_recipe_wrapper">
             <div className="recipe_creator">
-                <Link to='/home'><button>Back</button></Link>
+                <Link to='/home'><button className="btn_create_recipe">Back</button></Link>
                 <h1>create a new recipe</h1>
                 <form onSubmit={(e) => {handleSubmit(e)}}>
                 <div className="form_info">
@@ -135,7 +135,7 @@ const CreateRecipe = () => {
                         return <option value={t}> {t} </option>
                     })}
                 </select >
-                {errors.hasOwnProperty('title') || errors.hasOwnProperty('summary') || errors.hasOwnProperty('spoonacularScore') || errors.hasOwnProperty('healthScore') ?  <p className="form_warning_msg">Enter all information to continue</p> : <button type='submit'>Create New Recipe</button>}
+                {errors.hasOwnProperty('title') || errors.hasOwnProperty('summary') || errors.hasOwnProperty('spoonacularScore') || errors.hasOwnProperty('healthScore') ?  <p className="form_warning_msg">Enter all information to continue</p> : <button className="btn_cr_submit" type='submit'>Create New Recipe</button>}
                 </form>
             
                 {input.dietTypes.map(e => {

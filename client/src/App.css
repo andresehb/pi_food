@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 .App {
   text-align: center;
   margin: 0px;
@@ -6,7 +9,6 @@
   background-size: cover;
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
-  height: 100vh;
 }
 
 .App-logo {

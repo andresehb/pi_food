@@ -1,6 +1,7 @@
 .recipe_container {
     font-family: 'Poppins', sans-serif;
-    height: 100vh;
+    background-color: rgba(50, 50, 50, .5);
+    overflow-x: hidden;
 }
 
 .recipe_container .btn_back {
@@ -8,4 +9,75 @@
     font-weight: 400;
     letter-spacing: 2.525px;
     padding: .5em .8em;
+}
+
+.recipe_container .recipe_title {
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.recipe_container .recipe_img {
+    border-radius: .6em;
+}
+
+.recipe_dietType span {
+    font-weight: 400;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-right: 6px;
+    letter-spacing: 2px;
+}
+
+.recipe_dietType {
+    color: #fff;
+    font-size: .85rem;
+    font-weight: 400;
+}
+
+.recipe_summ span {
+    font-weight: 400;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-right: 6px;
+    letter-spacing: 2px;
+}
+
+.recipe_summ {
+    color: #fff;
+    font-size: .85rem;
+    font-weight: 400;
+}
+
+.recipe_healthScore span {
+    font-weight: 400;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-right: 6px;
+    letter-spacing: 2px;
+}
+
+.recipe_healthScore {
+    font-size: .85rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+.recipe_instrc span {
+    font-weight: 400;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-right: 6px;
+    letter-spacing: 2px;
+}
+
+.recipe_instrc {
+    font-size: .85rem;
+    color: #fff;
+    font-weight: 400;
 }

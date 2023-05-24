@@ -13,6 +13,20 @@
     font-family: "Poppins", sans-serif;
 }
 
+.recipe_creator .btn_create_recipe {
+    border: none;
+    font-weight: 400;
+    letter-spacing: 2.525px;
+    padding: .5em .8em;
+}
+
+.recipe_creator .btn_cr_submit {
+    border: none;
+    font-weight: 400;
+    letter-spacing: 2.525px;
+    padding: .5em .8em;
+}
+
 .recipe_creator h1 {
     font-weight: 400;
     text-transform: uppercase;
