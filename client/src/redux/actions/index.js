@@ -65,6 +65,9 @@ export const getRecipesByDietFunc = () => {
 export const addRecipeFunc = (payload) => {
     return async (dispatch) => {
         var json = await axios.post(`http://localhost:3001/recipes`, payload);
-        return json
+        dispatch({
+            type: ADD_RECIPE,
+            payload: json.data
+        })
     }
 }
