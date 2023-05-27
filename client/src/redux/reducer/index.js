@@ -15,8 +15,8 @@ const rootReducer = (state = initialState, { type, payload }) => {
            }
 
         case 'FILTER_BY_DIET':
-            const recipesArr = state.allRecipes
-            const dietTypeFltr = payload === 'All' ? recipesArr : recipesArr.filter(t => t.dietTypes.find(e => e.name === payload))
+            const recipesArr = state.allRecipes;
+            const dietTypeFltr = payload === 'All' ? recipesArr : recipesArr.filter((e) => e?.dietTypes?.find((e) => e?.name === payload));
             return {
                 ...state,
                 recipes: dietTypeFltr

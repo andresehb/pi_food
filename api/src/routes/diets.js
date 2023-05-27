@@ -13,12 +13,17 @@ router.get('/', async (req, res) => {
     const diets = dietsApi.data.results.map((e) => e.diets);
     const mapDiets = diets.flatMap((e) => e);
     mapDiets.forEach(async (e) => {
-        await Diets.findOrCreate({
-            where: { name: e }
-        });
+        try {
+            await Diets.findOrCreate({
+                where: { name: e }
+            });
+        } catch (error) {
+            console.log(error); // Envía el error por consola
+            alert('There was an error. Please try again'); // Muestra un error al usuario
+            const allDiets = await Diets.findAll(); // Busca todos los tipos de dietas
+            res.status(200).json(allDiets); // Devuelve todas las dietas
+        }
     });
-    const allDiets = await Diets.findAll();
-    res.json(allDiets);
 });
 
 module.exports = router;

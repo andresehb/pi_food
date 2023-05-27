@@ -16,21 +16,30 @@ router.post('/', async (req, res) => {
         createdInDb
     } = req.body;
 
-    let newRecipe = await Recipe.create({
-        title,
-        image,
-        summary,
-        healthScore,
-        analyzedInstructions,
-        createdInDb
-    });
-
-    let dietsDb = await Diets.findAll({
-        where: { name: dietTypes }
-    });
-
-    newRecipe.addDiets(dietsDb);
-    res.status(200).send('Recipe added');
+    if (!title || !analyzedInstructions) {
+        return res.status(400).send('Enter a name and instructions to proceed');
+    } else {
+        try {
+            let newRecipe = await Recipe.create({
+                title,
+                image,
+                summary,
+                healthScore,
+                analyzedInstructions,
+                createdInDb
+            });
+        
+            let dietsDb = await Diets.findAll({
+                where: { name: dietTypes }
+            });
+        
+            newRecipe.addDiets(dietsDb);
+            res.status(200).send('Recipe created successfully');
+        } catch (error) {
+            alert('There was an error. Please try again');
+            res.status(404).json({error: error.message});
+        }
+    }
 });
 
 module.exports = router;
