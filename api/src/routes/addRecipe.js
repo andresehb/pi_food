@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
     } = req.body;
 
     if (!title || !analyzedInstructions) {
-        return res.status(400).send('Enter a name and instructions to proceed');
+        return res.status(400).send('Give your recipe a name and/or instructions to continue');
     } else {
         try {
             let newRecipe = await Recipe.create({
@@ -34,10 +34,9 @@ router.post('/', async (req, res) => {
             });
         
             newRecipe.addDiets(dietsDb);
-            res.status(200).send('Recipe created successfully');
+            res.status(200).send('Congrats! Your recipe was created, you are now a chef!');
         } catch (error) {
-            alert('There was an error. Please try again');
-            res.status(404).json({error: error.message});
+            res.status(404).send('Oh no! Something went wrong, try again');
         }
     }
 });

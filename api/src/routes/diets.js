@@ -17,11 +17,10 @@ router.get('/', async (req, res) => {
             await Diets.findOrCreate({
                 where: { name: e }
             });
+            const allDiets = await Diets.findAll();
+            res.status(200).json(allDiets);
         } catch (error) {
-            console.log(error); // Envía el error por consola
-            alert('There was an error. Please try again'); // Muestra un error al usuario
-            const allDiets = await Diets.findAll(); // Busca todos los tipos de dietas
-            res.status(200).json(allDiets); // Devuelve todas las dietas
+            res.status(404).send('We could  not find that. Perhaps it is Harry Potter and the mystery of the diet');
         }
     });
 });

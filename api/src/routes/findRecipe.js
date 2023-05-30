@@ -15,10 +15,10 @@ router.get('/:id', async (req, res) => {
         if (recipeId) {
             res.status(200).json(recipeId);
         } else {
-            res.status(404).send('We could not find that ID. Please try again');
+            res.status(404).send('We could not find that ID. But do not fret, try again');
         }
     } catch (error) {
-        res.status(500).json({error: error.message})
+        res.status(500).send('Oops! Something went wrong. It is not your fault, I spilled coffee on my laptop')
     }
 });
 
